@@ -1,0 +1,30 @@
+//══════════════════════════════════════
+//         FLEXBOX GRID SYSTEM
+//══════════════════════════════════════
+
+.container {
+  @include block-centered(block);
+  max-width: $container-max-width;
+  @include mq(tablet) {
+      @include row-spacing($padding-top: em(30px));
+  }
+}
+
+.grid__row {
+  @include flex-container(flex, space-between, wrap);
+}
+
+[class*="grid__col--"] {
+  flex-basis: 100%;
+}
+
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    // Generate column modifier classes
+    &--#{$i} {
+      flex-basis: percentage($target / $context);
+    }
+  }
+}

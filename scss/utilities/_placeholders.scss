@@ -1,0 +1,43 @@
+//══════════════════════════════════════
+//    				 PLACEHOLDERS
+//══════════════════════════════════════
+
+%base-styles {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  line-height: ($base__line-height/$base__font-size);
+  font-weight: $font-weight--regular;
+  color: palette(black);
+}
+
+%full-width {
+  width: 100%;
+}
+
+%block-element {
+  display: block;
+}
+
+%flex-element {
+  display: flex;
+}
+
+%inline-block-element {
+  display: inline-block;
+}
+
+%inline-flex-element {
+  display: inline-flex;
+}
+
+%center-element {
+  margin: 0 auto;
+}
+
+%center-text {
+  text-align: center;
+}
+
+%condensed {
+  @include column-spacing(em(25px));
+}

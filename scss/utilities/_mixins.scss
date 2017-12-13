@@ -1,0 +1,78 @@
+//══════════════════════════════════════
+//    				GLOBAL MIXINS
+//══════════════════════════════════════
+// BEM naming helpers
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+@mixin double-bem($element, $modifier) {
+  &__#{$element} {
+    &--#{$modifier} {
+      @content;
+    }
+  }
+}
+// Creates a flexbox container
+@mixin flex-container($disp: flex, $just: null, $wrap: null, $dir: null) {
+  @if $disp == flex {
+    @extend %flex-element;
+  }
+  justify-content: $just;
+  flex-wrap: $wrap;
+  flex-direction: $dir;
+}
+// Builds media query rules - with mobile first default
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+// Centers inline elements - with flexbox default
+@mixin inline-centered($type: flex) {
+  @if $type == flex {
+    @extend %inline-flex-element;
+    @extend %center-element;
+  }
+  @if $type == block {
+    @extend %inline-block-element;
+    @extend %center-element;
+  }
+}
+// Centers block elements - with flexbox default
+@mixin block-centered($type: flex) {
+  @if $type == flex {
+    @extend %flex-element;
+    @extend %center-element;
+  }
+  @if $type == block {
+    @extend %block-element;
+    @extend %center-element;
+  }
+}
+// Mixin to handle the top and bottom spacing of the rows. Gives bottom element same value as top if not specified.
+@mixin row-spacing($margin-top: null, $margin-bottom: $margin-top, $padding-top: null, $padding-bottom: $padding-top) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+// Mixin to handle the left and right spacing of the columns. Gives right element same value as left if not specified.
+@mixin column-spacing($margin-left: null, $margin-right: $margin-left, $padding-left: null, $padding-right: $padding-left) {
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+}

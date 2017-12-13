@@ -1,0 +1,19 @@
+//══════════════════════════════════════
+//          GLOBAL FUNCTIONS
+//══════════════════════════════════════
+// Import if Google Fonts URL is defined
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+// Set the "context" flex-basis for the grid
+@function g-context($g-col-width, $g-col-count ,$g-gutter-width) {
+  $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+  @return $g-context;
+}
+// Convert px to em values
+@function em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($color-palettes, $palette), $shade);
+}
