@@ -25,7 +25,7 @@ video.ontimeupdate = function() {
     const span = transcriptSpan[i];
     const captionStart = parseFloat(span.getAttribute('data-captionStart'));
     const captionEnd = parseFloat(span.getAttribute('data-captionEnd'));
-    if (video.currentTime > captionStart && video.currentTime < captionEnd) {
+    if (video.currentTime >= captionStart && video.currentTime < captionEnd) {
       span.classList.add("highlight");
     } else {
       span.classList.remove("highlight");
