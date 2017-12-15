@@ -15,9 +15,7 @@ a {
 	text-decoration: none;
 }
 
-.mejs__video, .mejs__container {
-	max-width: 100vw;
-	max-height: 100%;
-	margin: 0 auto;
-	display: block;
+body {
+	background-image: url(../../images/crossword.png);
+	background-repeat: repeat;
 }

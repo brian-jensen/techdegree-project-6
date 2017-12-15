@@ -1,0 +1,18 @@
+//══════════════════════════════════════
+//           VIDEO ELEMENT
+//══════════════════════════════════════
+
+.mejs__container,
+.mejs__video {
+  max-width: 100vw;
+  max-height: 100%;
+  @include row-spacing(0,12px);
+  @include block-centered(flex);
+  @include mq(tablet) {
+    @include row-spacing(30px,10px);
+  }
+}
+
+.mejs__controls {
+  background: rgba($color-secondary, .8) !important;
+}

@@ -12,25 +12,18 @@ $font-weight--regular    : 400;
 $font-weight--bold       : 600;
 
 // Typography Defaults
-$base__font-size    : 16px;
-$base__line-height  : 36px;
+$base__font-size    : 14px;
+$base__line-height  : 26px;
 $base__letter-space : 1px;
 
 // Descriptive Base Colors
 $white  : #fff;
 $black  : #000;
-
-// Descriptive Button Colors
-$malibu  				: #51ddfc;
-$emerald        : #63cc82;
-$sunglo         : #e4757a;
-$coral          : #fd7856;
-$purple-majesty : #927bc1;
+$orange : #ffa500;
 
 // Color Usage
 $color-primary   : $black;
-$color-secondary : $malibu;
-$color-accent    : $emerald;
+$color-secondary : $orange;
 $color-shadow    : rgba($black, .2);
 
 // Color Palette Modifiers
@@ -50,8 +43,6 @@ $color-palettes: (
 		dark     : darken($black, 10%)
 	)
 );
-
-$border--rounded-corners : 5px;
 
 // Grid Global variables
 $g-col-count				 : 12;

@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 .container {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif, Arial;
-  line-height: 2.25;
+  line-height: 1.8571428571;
   font-weight: 400;
   color: #000; }
 
 .container {
   display: block; }
 
-.grid__row {
+.grid__row, .mejs__container,
+.mejs__video {
   display: flex; }
 
-.container {
+.container, .mejs__container,
+.mejs__video {
   margin: 0 auto; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -416,18 +418,12 @@ ul {
 a {
   text-decoration: none; }
 
-.mejs__video, .mejs__container {
-  max-width: 100vw;
-  max-height: 100%;
-  margin: 0 auto;
-  display: block; }
+body {
+  background-image: url(../../images/crossword.png);
+  background-repeat: repeat; }
 
 .container {
   max-width: 725px; }
-  @media only screen and (min-width: 768px) {
-    .container {
-      padding-top: 1.875em;
-      padding-bottom: 1.875em; } }
 
 .grid__row {
   justify-content: space-between;
@@ -435,5 +431,37 @@ a {
 
 [class*="grid__col--"] {
   flex-basis: 100%; }
+
+.highlight {
+  color: #ffa500;
+  text-shadow: 1px 1px rgba(235, 235, 235, 0.7); }
+
+#interactiveTranscript {
+  padding-left: 30px;
+  padding-right: 30px; }
+  #interactiveTranscript span:hover {
+    cursor: pointer;
+    border-bottom: 1px dashed #cccccc; }
+  @media only screen and (min-width: 768px) {
+    #interactiveTranscript {
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 1.1428571429em;
+      line-height: 2.2857142857em; } }
+
+.mejs__container,
+.mejs__video {
+  max-width: 100vw;
+  max-height: 100%;
+  margin-top: 0;
+  margin-bottom: 12px; }
+  @media only screen and (min-width: 768px) {
+    .mejs__container,
+    .mejs__video {
+      margin-top: 30px;
+      margin-bottom: 10px; } }
+
+.mejs__controls {
+  background: rgba(255, 165, 0, 0.8) !important; }
 
 /*# sourceMappingURL=styles.css.map */

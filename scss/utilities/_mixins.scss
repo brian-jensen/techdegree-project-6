@@ -76,3 +76,18 @@
   padding-left: $padding-left;
   padding-right: $padding-right;
 }
+
+@mixin linkStyles ($link, $visit: $link, $hover: $link, $active: $link) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}

@@ -5,9 +5,6 @@
 .container {
   @include block-centered(block);
   max-width: $container-max-width;
-  @include mq(tablet) {
-      @include row-spacing($padding-top: em(30px));
-  }
 }
 
 .grid__row {
